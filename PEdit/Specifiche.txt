@@ -1,0 +1,26 @@
+Voglio creare una applicazione in inglese simile a notepad con tema scuro su tutta l'applicazione.
+L'applicazione gestisce l'apertura di più files utilizzando i tab.
+La barra in alto, dove vi è il nome dell'applicazione e le icone per minimizzare massimizzare e chiudere, è custom ed è scura. Ci sono solo le icone
+per minimizzare e chiudere lìapplicazione. Inoltre questa barra occupa poco spazio in altezza
+Sotto c'è il menu. Nel menu ci sono alcune delle voci più comuni.
+Voce "File"
+- New: nuovo file non ancora salvato su un nuovo tab 
+- Open: Apertura di uno o più files. Se apro un files con un formato noto (esempio .md per markdown, se possibile vorrei avere la sintassi colorata per tale file, da gestire i prinipali tipi di files, come .sql, .cs, .c, .cpp, .html, .css, .js, .py)
+- Open Folders: Apertura di una o più cartelle
+- Close All: Chiusura di tutti i tab e richiesta di salvataggio sui i tab che non sono ancora stati salvati, o dove ci sono delle differenze rispetto al file salvato in locale, oppure il tab non è ancora stato salvato
+- Exit: Chiusura app
+Voce "Info": mi si apre una popup dove deve comparire l'encoding del file, il peso del file in kbyte, o megabyte, o bytes. Il numero di righe e parole contenute, il formato del file
+Voce: "Options": mi si apre una popup dove posso cambiare il font, la dimensione del font
+
+
+Tutte le impostazioni che l'applicazione si deve ricordare devono essere salvate dentro un file ini nella cartella corrente dell'eseguibile.
+Se faccio doppio click su una parola seleziono la parola corrente (tutto il testo delimitato da dei caratteri di spazio, come lo spazio il tab, e altri simili) e appena seleziono una parola corrente voglio che nel tab corrente vengano selezionate le stesse parole della parola selezionata
+Nella noza dove posso scrivere se seleziono del testo e faccio tasto destro vedo un menu, per tagliare o copiare la selezione del testo. Ovviamente 
+devono funzionare il ctrl-s (salva sul disco il file del tab corrente), ctrl-a, ctrl-c, ctrl-v e altre combinazioni comuni. Anche il ctrl-f che se intercettato mi deve comparire una modale dove mi viene chiesto di inserire la parola cercata. Questa funzione funziona in modo simile a notepadd++, solo che non ho bisogno di gestire una ricerca complessa come le regex. Mi basta una ricerca semplice sulla base del testo inserito.
+
+L'applicazione può riceve in ingresso una lista di files, oppure quando aperta posso fare drag and drop da windows explorer.
+Posso fare drag and drop di
+- una o più cartelle: Se passo una cartella mi si apre sulla sinistra un tree. I nodi radice del tree sono le cartelle. Posso navigare nel tree e se faccio doppio click su un file mi si apre in un nuovo tab. In pratica il tree rappresenta una scorciatoia per aprire i files che si trovano dentro le cartelle passate come argomento. Tale tree può essere chiuso, e in questo caso il tree mi si azzera e sparisce.
+- uno o più files: Ogni files viene aperto su un tab nuovo. Se modifico un file o cambia rispetto al file salvato sul disco il nome del tab (che contiene il nome del file) cambia e si aggiunge un asterisco come prefisso.
+
+Credo di averti detto tutto. Se hai domande prima fammele altrimenti procedi a scrivere il codice
