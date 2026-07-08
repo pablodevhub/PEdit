@@ -1,0 +1,87 @@
+﻿<Window x:Class="PEdit.Views.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Find &amp; Replace" Height="450" Width="600" MinHeight="350" MinWidth="500"
+        Background="#252526" Foreground="#D4D4D4" Topmost="True" WindowStartupLocation="CenterOwner"
+        Icon="/Assets/app-icon-for-a-notepad-application--notebook-with-.ico">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3E3E42"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,0,5,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4F4F53"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#007ACC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Find what:" VerticalAlignment="Center" Foreground="#D4D4D4"/>
+            <TextBox x:Name="SearchInputBox" Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" KeyDown="SearchInputBox_KeyDown" Background="#3E3E42" Foreground="White" BorderThickness="0" Padding="5" Margin="0,0,15,0"/>
+            <CheckBox Grid.Column="2" Content="Regular Expressions" IsChecked="{Binding IsRegex}" Foreground="#D4D4D4" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Replace with:" VerticalAlignment="Center" Foreground="#D4D4D4"/>
+            <TextBox Grid.Column="1" Text="{Binding ReplaceText, UpdateSourceTrigger=PropertyChanged}" Background="#3E3E42" Foreground="White" BorderThickness="0" Padding="5" Margin="0,0,15,0"/>
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                <RadioButton Content="Start from beginning" IsChecked="{Binding Config.SearchFromBeginning}" Foreground="#D4D4D4" Margin="0,0,0,5"/>
+                <RadioButton Content="Start from cursor" IsChecked="{Binding Config.SearchFromCursor}" Foreground="#D4D4D4"/>
+            </StackPanel>
+        </Grid>
+
+        <TextBox Grid.Row="2" Text="{Binding LogMessage}" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Background="#1E1E1E" Foreground="#2B91AF" BorderThickness="1" BorderBrush="#3E3E42" Padding="5" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Find All" Command="{Binding FindAllCommand}"/>
+            <Button Content="Find Current Tab" Command="{Binding FindCurrentCommand}"/>
+            <Button Content="Find in All Tabs" Command="{Binding FindNextCommand}" Background="#007ACC"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5,0,0">
+            <Button Content="Replace in All Tabs" Command="{Binding ReplaceAllCommand}"/>
+            <Button Content="Replace in Current Tab" Command="{Binding ReplaceCurrentCommand}"/>
+            <Button Content="Replace Next" Command="{Binding ReplaceNextCommand}" Background="#007ACC"/>
+        </StackPanel>
+    </Grid>
+</Window>
