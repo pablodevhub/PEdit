@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Markdown Preview Live" Height="600" Width="800"
         Background="#1E1E1E" Foreground="#D4D4D4"
-        Icon="/Assets/app-icon-for-a-notepad-application--notebook-with-.ico">
+        Icon="/Assets/pedit-scuro.ico" >
     <Grid>
         <WebBrowser x:Name="MarkdownBrowser" />
     </Grid>

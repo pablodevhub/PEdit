@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Options" Height="280" Width="450"
         Background="#252526" Foreground="#D4D4D4" WindowStartupLocation="CenterOwner"
-        Icon="/Assets/app-icon-for-a-notepad-application--notebook-with-.ico">
+        Icon="/Assets/pedit-scuro.ico" >
 
     <Window.Resources>
         <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">

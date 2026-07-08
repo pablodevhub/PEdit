@@ -4,7 +4,7 @@
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         Title="PEdit" Height="600" Width="1000"
         Background="#1E1E1E" Foreground="#D4D4D4"
-        Icon="/Assets/app-icon-for-a-notepad-application--notebook-with-.ico"
+        Icon="/Assets/pedit-scuro.ico"
         AllowDrop="True" Drop="Window_Drop">
 
     <Window.Resources>

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Find &amp; Replace" Height="450" Width="600" MinHeight="350" MinWidth="500"
         Background="#252526" Foreground="#D4D4D4" Topmost="True" WindowStartupLocation="CenterOwner"
-        Icon="/Assets/app-icon-for-a-notepad-application--notebook-with-.ico">
+        Icon="/Assets/pedit-scuro.ico" >
 
     <Window.Resources>
         <Style TargetType="Button">

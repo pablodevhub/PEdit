@@ -6,15 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>app-icon-for-a-notepad-application--notebook-with-.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\pedit-scuro.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\app-icon-for-a-notepad-application--notebook-with-.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="app-icon-for-a-notepad-application--notebook-with-.ico" />
+    <None Remove="Assets\pedit-chiaro.ico" />
+    <None Remove="Assets\pedit-scuro.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\app-icon-for-a-notepad-application--notebook-with-.ico" />
+    <Resource Include="Assets\pedit-chiaro.ico" />
+    <Resource Include="Assets\pedit-scuro.ico" />
   </ItemGroup>
 
   <ItemGroup>
